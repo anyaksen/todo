@@ -1,5 +1,6 @@
 body > section >  ul 
 {
+    @import (multiple) "./vars/colors.less";
     padding-left: 0;
     div
     {
@@ -27,7 +28,7 @@ body > section >  ul
             }
         }
 
-        button 
+       /* button 
         { 
             display: inline-block;
             color: white;
@@ -39,19 +40,31 @@ body > section >  ul
             right: 0;
             cursor: pointer;
             
-        }
+        }*/
         
+        button 
+        { 
+            color: @clr-alt;
+            background-color: @clr-main;
+            cursor: pointer;
+            
+            border: 0.125rem solid darken(@clr-main, 10%);
+            display: inline-block;
+
+            width: 15%;
+            height: 20px;
+            margin-right: 0;
+            right: 0;
+        }
         [aria-pressed] 
         {
             position: relative;
             top: -0.25rem;
             left: -0.25rem;
-            box-shadow: 0.125em 0.125em 0 #fff, 0.25em 0.25em #000;
         }
         [aria-pressed="true"]
         {
-            box-shadow: inset 0 0 0 0.15rem #000, 
-            inset 0.25em 0.25em 0 #fff;
+            background-color: darken(@clr-main, 20%);
         }
         }
 }

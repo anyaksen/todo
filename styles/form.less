@@ -1,35 +1,43 @@
 form 
 {
-    
+    @import (multiple) "./vars/colors.less";
     margin-right: 0;
     padding-top: 10px;
-    height: 40px;
+    //height: 40px;
+	width: 100%;
     input
     {
-        width: 180px;
-        border: 0.125rem solid;
-        border-radius: 0.125rem;
+        width: inherit;
+        border: 2px solid darken(@clr-main, 10%);
+		margin-right: 20px;
         height: 40px;
+		box-sizing: border-box;
     }
-    button 
+   button 
 	{ 
-		color: white;
-		background-color: #000;
-		border-radius: 0.5rem;
 		padding: 1em 2em;
-        width: 100px;
+		color: @clr-alt;
+		background-color: @clr-main;
+		cursor: pointer;
+		height: 40px;
+		border: 2px solid darken(@clr-main, 10%);
+		border-top: none;
+		right: 0;
 	}
-	
+	button.active 
+	{ 
+		color: @clr-alt;
+		background-color: darken(@clr-main, 20%);
+		padding: 1em 2em;
+	}
 	[aria-pressed] 
 	{
 		position: relative;
 		top: -0.25rem;
 		left: -0.25rem;
-		box-shadow: 0.125em 0.125em 0 #fff, 0.25em 0.25em #000;
 	}
 	[aria-pressed="true"]
 	{
-		box-shadow: inset 0 0 0 0.15rem #000, 
-        inset 0.25em 0.25em 0 #fff;
+		background-color: darken(@clr-main, 20%);
 	}
 }
