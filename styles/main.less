@@ -1,0 +1,41 @@
+body > main
+{
+	@import (multiple) "./mixins/reset-button.less";
+	@import (multiple) "./mixins/visually-hidden.less";
+	
+	flex-grow: 1;
+	flex-basis: 50%;
+	
+	> p.button-test
+	{
+		> button
+		{
+			.reset-button();
+			
+			font: inherit;
+			text-decoration: underline;
+			
+			cursor: pointer;
+			
+			color: blue;
+		}
+	}
+	
+	> p.hidden
+	{
+		.visually-hidden();
+	}
+	
+	> p.extends-test
+	{
+		button
+		{
+			&:extend(.extend-button all);
+		}
+		
+		a
+		{
+			&:extend(.extend-button all);
+		}
+	}
+}
